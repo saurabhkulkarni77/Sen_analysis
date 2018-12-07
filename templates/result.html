@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <h2 style="color:#fff;">Sentiment analysis</h2>      
+    <p style="color:#fff;">Using ML to predict how you feel</p>
+  </div>      
+</div>
+
+
+  {{ name }}
+</div></p>
+
+<!-- Main ML Prediction Display Here -->
+    {% if prediction ==  0 %}
+
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  Ohh, why are you so sad..
+</div></p>
+    <a href="#" class="btn btn-danger">Bad mood</a>
+     {% elif prediction == 1 %}
+	<p class="card-text"><div class="alert alert-danger" role="alert">
+  Nice to see you happy!
+</div></p>
+    <a href="#" class="btn btn-primary">Good mood</a>
+    {% endif%}
+  </div>
+
+<!-- Main ML Prediction Display Ends Here -->
+  <div class="card-footer text-muted">
+   
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
